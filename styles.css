@@ -1,0 +1,222 @@
+body {
+    background-color: #1d2731;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #84fcc4
+}
+
+.container {
+    border: 5px solid #ffbb39;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.5%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.title-area{
+    /* border: 2px solid pink; */
+    margin-left: 25%;
+    margin-right: 20%;
+    color: #ffbb39;
+}
+.drinks-title{
+    margin-left: 30%;
+    color: #ffbb39;
+}
+.btn-container{
+    margin-left: 30%;
+}
+
+.input-num {
+    width: 4rem;
+    height: 1.5rem;
+}
+
+.input-num-amount {
+    width: 4.5rem;
+    height: 1.5rem;
+}
+.input-num-size {
+    width: 4.5rem;
+    height: 1.5rem;
+}
+.input-num-abv {
+    width: 5.5rem;
+    height: 1.5rem;
+}
+
+
+.input-rad {
+    width: 2rem;
+    height: 2rem;
+}
+
+.rad-n-label {
+    /* border: 1px solid orangered; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 3rem;
+}
+
+.rad-n-label label{
+    padding-left: 0.3rem;
+}
+
+.about-you {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.gender-inside {
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.drink-time {
+    /* border: 1px solid orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.drink-time-title{
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+span{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.time-view{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+#minutes-elapsed{
+    display: none;
+}
+
+.drink-time-input {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-sign{
+    width: 4rem;
+    height: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 12px;
+    border: 0;
+}
+
+.drinks-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-row,
+.beer-row,
+.wine-row,
+.liquor-row,
+.other-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.table-row{
+    /* border: 1px solid blue; */
+    margin-bottom: 0.5rem;    
+    
+}
+
+.title-row{
+    font-weight: bold;
+    margin-bottom: 1rem;
+    /* margin-left: 1rem; */
+}
+
+.type-column {
+    /* border: 1px solid red; */
+    width: 5rem;
+}
+
+.amount-column{
+    /* border: 1px solid red; */
+    width: 5rem;
+}
+
+.size-column {
+    /* border: 1px solid red; */
+    width: 5rem;
+    height: 2rem;
+}
+
+.down-a-little{
+    padding-top: 1rem;
+    /* padding-left: 5rem; */
+}
+
+.abv-column {
+    /* border: 1px solid red; */
+    width: 6rem;
+    height: 2rem;
+}
+
+select{
+    width: 100%;
+    border-radius: 7px;
+    height: 100%;
+    border: 0;
+}
+input{
+    width: 100%;
+    border-radius: 7px;
+    /* border: 0; */
+}
+
+
+.btn-container{
+    margin-top: 1rem;
+    width: 10rem;
+}
+
+button{
+    width: 80%;
+    font-weight: bolder;
+    font-size: x-large;
+    color: #1d2731;
+}
+
+.result-area{
+    color: #ffbb39;
+    display: flex;
+    justify-content: center;
+}
