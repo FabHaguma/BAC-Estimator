@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAC Estimator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="testit.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="title-area"><h1>BAC Estimator</h1></div>
+
+      <div class="about-you">
+        <div class="gender">
+          <div class="gender-inside">
+            <div class="rad-n-label">
+              <input
+                type="radio"
+                class="input-rad"
+                name="gender"
+                value="male"
+              />
+              <label for="maleChoice">Male</label>
+            </div>
+            <div class="rad-n-label">
+              <input
+                type="radio"
+                class="input-rad"
+                name="gender"
+                value="female"
+              />
+              <label for="femaleChoice">Female</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="weight">
+          <input type="number" class="input-num" min="20" id="body-weight" />
+          <label for="bodyWeight">Kilograms</label>
+        </div>
+      </div>
+
+      <div class="drink-time">
+        <div class="drink-time-title">
+          <div><h4>Time Since 1st Drink:</h4></div>
+          <div class="time-view">
+            <div>
+              <span id="time-display-hour">1h</span>
+              <span id="time-display-minute">00"</span>
+            </div>
+          </div>
+        </div>
+        <div class="drink-time-input">
+          <button class="time-sign" onclick="decreamentTimeValue()">-</button>
+          <button class="time-sign" onclick="increamentTimeValue()">+</button>
+        </div>
+      </div>
+
+      <div class="actual-drinks">
+        <div class="drinks-title">
+          <h3>Alcohol Consumed</h3>
+        </div>
+
+        <div class="drinks-table">
+          <!-- COLUMN_TITLE ROW START   -   COLUMN_TITLE ROW START   -   COLUMN_TITLE ROW START   -   COLUMN_TITLE ROW START -->
+          <div class="title-row table-row">
+            <div class="type-column"><label for="type">Type</label></div>
+            <div class="amount-column"><label for="amount">Amount</label></div>
+            <div class="size-column down-a-little">
+              <label for="size">Size</label>
+            </div>
+            <div class="abv-column down-a-little">
+              <label for="abv">ABV</label>
+            </div>
+          </div>
+          <!-- COLUMN_TITLE ROW END   -   COLUMN_TITLE ROW END   -   COLUMN_TITLE ROW END   -   COLUMN_TITLE ROW END -->
+
+          <!-- BEER ROW START   -   BEER ROW START   -   BEER ROW START   -   BEER ROW START -->
+          <div class="beer-row table-row">
+            <div class="type-column"><label for="type">Beer</label></div>
+
+            <div class="amount-column">
+              <input
+                type="number"
+                class="input-num-amount"
+                min="0"
+                id="beer-amount"
+              />
+            </div>
+            <div class="size-column">
+              <select name="bottle-size" id="beer-size">
+                <option value="330" selected>330ml</option>
+                <option value="500">500ml</option>
+                <option value="700">700ml</option>
+                <option value="100">1L</option>
+              </select>
+            </div>
+            <div class="abv-column">
+              <select name="abv" id="beer-abv">
+                <option value="5" selected>Heineken</option>
+                <option value="5">Skol</option>
+                <option value="5.5">Mutzig</option>
+                <option value="6.5">Turbo King</option>
+              </select>
+            </div>
+          </div>
+          <!-- BEER ROW END   -   BEER ROW END   -   BEER ROW END   -   BEER ROW END -->
+
+          <!-- WINE ROW START   -   WINE ROW START   -   WINE ROW START   -   WINE ROW START -->
+          <div class="wine-row table-row">
+            <div class="type-column"><label for="type">Wine</label></div>
+
+            <div class="amount-column">
+              <input
+                type="number"
+                class="input-num-amount"
+                min="0"
+                id="wine-amount"
+              />
+            </div>
+            <div class="size-column">
+              <select name="cup-size" id="wine-size">
+                <option value="150" selected>150ml</option>
+                <option value="250">250ml</option>
+                <option value="1000">1L</option>
+              </select>
+            </div>
+
+            <div class="abv-column">
+              <select name="abv" id="wine-abv">
+                <option value="12" selected>12%</option>
+                <option value="14">14%</option>
+                <option value="16">16%</option>
+                <option value="18">18%</option>
+              </select>
+            </div>
+          </div>
+          <!-- WINE ROW END   -   WINE ROW END   -   WINE ROW END   -   WINE ROW END -->
+
+          <!-- LIQUOR ROW START   -   LIQUOR ROW START   -   LIQUOR ROW START   -   LIQUOR ROW START -->
+          <div class="liquor-row table-row">
+            <div class="type-column"><label for="type">Liquor</label></div>
+
+            <div class="amount-column">
+              <input
+                type="number"
+                class="input-num-amount"
+                min="0"
+                id="liquor-amount"
+              />
+            </div>
+            <div class="size-column">
+              <select name="liquor-size" id="liquor-size">
+                <option value="50" selected>50ml</option>
+                <option value="500">60ml</option>
+                <option value="200">200ml</option>
+              </select>
+            </div>
+            <div class="abv-column">
+              <select name="abv" id="liquor-abv">
+                <option value="30" selected>30%</option>
+                <option value="35">35%</option>
+                <option value="40">40%</option>
+                <option value="45">45%</option>
+                <option value="50">50%</option>
+              </select>
+            </div>
+          </div>
+          <!-- LIQUOR ROW END   -   LIQUOR ROW END   -   LIQUOR ROW END   -   LIQUOR ROW END -->
+
+          <!-- OTHER ROW START   -   OTHER ROW START   -   OTHER ROW START   -   OTHER ROW START -->
+          <div class="other-row table-row">
+            <div class="type-column"><label for="type">Other</label></div>
+
+            <div class="amount-column">
+              <input
+                type="number"
+                class="input-num-amount"
+                id="other-amount"
+                min="0"
+              />
+            </div>
+            <div class="size-column">
+              <input
+                type="number"
+                class="input-num-size"
+                min="1"
+                id="other-size"
+              />
+            </div>
+            <div class="abv-column">
+              <input
+                type="number"
+                class="input-num-abv"
+                min="1"
+                max="100"
+                id="other-abv"
+              />
+            </div>
+          </div>
+          <!-- OTHER ROW END   -   OTHER ROW END   -   OTHER ROW END   -   OTHER ROW END -->
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button onclick="calculateBAC()">Calculate</button>
+      </div>
+      <div class="result-area">
+        <h2 id="final-result">Your BAC is: 0.00%</h2>
+      </div>
+    </div>
+  </body>
+</html>
