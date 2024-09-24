@@ -1,5 +1,4 @@
 # BAC-Estimator
-Making an estimation of the Blood Alcohol Content
+Making an estimation of the Blood Alcohol Content @ https://fabrice137.github.io/BAC-Estimator/
 
 
-check the app here:  https://fabrice137.github.io/BAC-Estimator/
