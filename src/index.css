@@ -34,21 +34,39 @@
     --danger-bac-border: #EF9A9A;
 }
 
-html, body {
-    height: 100%; margin: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--primary-bg); 
-    display: flex; justify-content: center; align-items: center;
-    color: var(--text-dark);
+html {
+    height: 100%; /* Allow body to take full height */
 }
-.app-container {
-    display: flex; width: 95%; max-width: 1450px; height: 90vh; min-height: 720px;
-    background-color: var(--app-container-bg); 
-    border-radius: 15px; /* More rounded */
-    box-shadow: 0 12px 35px rgba(0,0,0,0.25); /* Stronger shadow */
-    overflow: hidden; padding: 15px; /* Increased padding */
-    gap: 15px; 
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center for larger screens */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    padding: 20px 0; /* Add some padding for smaller screens when content might touch edges */
     box-sizing: border-box;
 }
+
+.app-container {
+    display: flex;
+    width: 95%;
+    max-width: 1450px;
+    /* Remove fixed height: 90vh; let content define height or use max-height */
+    max-height: 90vh; /* If you want to limit height on large screens */
+    min-height: 680px; /* Adjust if needed */
+    background-color: var(--app-container-bg);
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    overflow: hidden; /* This clips content that's too large for the rounded corners */
+    padding: 15px;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
 .column {
     flex: 1; background-color: var(--column-bg); padding: 25px; /* Increased padding */
     border-radius: 10px; /* More rounded */
@@ -188,16 +206,67 @@ html, body {
     .dual-result-container { flex-direction: row; align-items: stretch; }
     .dual-result { flex: 1; }
 }
-@media (max-width: 900px) { 
-    html, body { align-items: flex-start; height: auto; }
-    .app-container { flex-direction: column; height: auto; width: 95%; max-width: 550px; margin: 20px auto; padding:10px; }
-    .column { flex: none; width: 100%; margin-bottom: 12px; max-height: none; overflow-y: visible; padding:15px; }
-    .app-container { overflow: visible; }
-    .manual-drink-inputs-row { flex-direction: column; }
-    .manual-drink-inputs-row .input-group { min-width: unset; width: 100%; margin-bottom:12px;}
-    #drinkListContainer { max-height: 200px; }
-    .column h2 { font-size: 1.4em; margin-bottom: 20px; }
-    .column h3.section-title { font-size: 1.15em; margin-top:20px; margin-bottom:12px; }
-    .bac-value-display { font-size: 1.7em; }
-    .results-column-footer { margin-top: 25px; }
+
+@media (max-width: 900px) {
+    body {
+        align-items: flex-start; /* Align container to top */
+        /* padding: 15px; Add padding around the app container if desired */
+    }
+    .app-container {
+        flex-direction: column;
+        height: auto; /* Let content dictate height */
+        max-height: none; /* Remove max-height constraint */
+        min-height: 0; /* Remove min-height if it causes issues */
+        width: 95%;
+        max-width: 600px; /* Or adjust as needed */
+        margin: 20px auto; /* Center it if body padding isn't used */
+        overflow: visible; /* Allow content to flow naturally */
+    }
+    .column {
+        /* ... existing ... */
+        overflow-y: visible; /* Allow columns to grow naturally */
+        max-height: none;
+    }
+}
+
+@media (max-width: 600px) { /* Example for smaller phones */
+    .column h2 {
+        font-size: 1.3em; /* Was 1.4em at 900px */
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+    .column h3.section-title {
+        font-size: 1.05em; /* Was 1.15em at 900px */
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .input-group label {
+        font-size: 0.9em;
+    }
+    .input-group input[type="number"], .input-group select {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+    .stepper-button {
+        width: 36px; height: 40px; line-height: 40px; font-size: 1em;
+    }
+    .button {
+        padding: 12px;
+        font-size: 1em;
+    }
+    .calculate-button {
+        padding: 14px;
+        font-size: 1.1em;
+    }
+    .bac-value-display {
+        font-size: 1.5em; /* Was 1.7em at 900px */
+        padding: 10px;
+    }
+    #drinkList li {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+    #drinkListContainer {
+        max-height: 150px; /* Further reduce if needed */
+    }
 }
