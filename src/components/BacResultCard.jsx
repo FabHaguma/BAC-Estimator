@@ -11,16 +11,16 @@ function BacResultCard({ title, resultData }) {
   }
 
   return (
-    <div className={`dual-result ${title.toLowerCase().includes('male') ? 'male' : 'female'}`}>
+    <div className={`dual-result ${title.toLowerCase().startsWith('for female') ? 'female' : 'male'}`}>
       <h4>{title}</h4>
-      <div id={`bacResultDisplay${title.includes('Male') ? 'Male' : 'Female'}`} className={resultData.className}>
+      <div id={`bacResultDisplay${title.includes('Female') ? 'Female' : 'Male'}`} className={resultData.className}>
         {resultData.bacStr}
       </div>
-      <div id={`bacMessage${title.includes('Male') ? 'Male' : 'Female'}`} className="bac-message-text">
+      <div id={`bacMessage${title.includes('Female') ? 'Female' : 'Male'}`} className="bac-message-text">
         {resultData.message}
       </div>
       <p className="info-text">
-        Est. time to sober: <span id={`timeToSober${title.includes('Male') ? 'Male' : 'Female'}`}>{resultData.timeToSober}</span>
+        Est. time to sober: <span id={`timeToSober${title.includes('Female') ? 'Female' : 'Male'}`}>{resultData.timeToSober}</span>
       </p>
     </div>
   );

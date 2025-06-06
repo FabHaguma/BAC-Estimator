@@ -47,16 +47,19 @@ export function getBacStatus(bac) {
 
   if (bac === 0) {
     className += ' bac-safe';
-    message = "Likely sober. If alcohol was consumed recently, effects might linger.";
+    message = "Likely sober. No alcohol detected.";
   } else if (bac < 0.03) {
     className += ' bac-safe';
-    message = "BAC is very low. Caution advised as any alcohol can affect coordination.";
-  } else if (bac < 0.08) {
+    message = "BAC is low. Any alcohol can affect coordination.";
+  } else if (bac < 0.05) {
     className += ' bac-caution';
-    message = "BAC in caution zone. Impairment is likely. DO NOT DRIVE.";
+    message = "BAC is rising. Impairment is likely possible.";
+  } else if (bac < 0.08) {
+    className += ' bac-danger';
+    message = "BAC in caution zone. Noticeable impairment. DO NOT DRIVE.";
   } else {
     className += ' bac-danger';
-    message = "BAC is high, likely over legal limit. DO NOT DRIVE.";
+    message = "BAC is high, over legal limit. DO NOT DRIVE.";
   }
   return { className, message };
 }
